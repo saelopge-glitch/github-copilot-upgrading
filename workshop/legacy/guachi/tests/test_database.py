@@ -37,8 +37,8 @@ class TestDbdict(unittest.TestCase):
 
     def test_get_item(self):
         foo = database.dbdict('/tmp/test_guachi')
-        foo['bar'] = 'beer'
-        self.assertEqual(foo['bar'], u'beer')
+    foo['bar'] = 'beer'
+    self.assertEqual(foo['bar'], 'beer')
  
     def test_setitem_update(self):
         """If it already exists, you need to do an update"""

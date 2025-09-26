@@ -50,7 +50,7 @@ class test_ConfigMapper(unittest.TestCase):
         foo = ConfigMapper('/tmp')
         actual = foo()
         expected = {}
-        self.assertEqual(actual, expected) 
+        self.assertEqual(actual, expected)
 
 
     def test_set_ini_options(self):
@@ -112,9 +112,8 @@ class test_ConfigMapper(unittest.TestCase):
         foo.update_config({})
         db = dbdict('/tmp/guachi.db')
         actual = db.get_all()
-        expected ={}
-        self.assertEqual(actual, expected) 
-        
+        expected = {}
+        self.assertEqual(actual, expected)
 
     def test_update_config_dict(self):
         foo = ConfigMapper('/tmp')

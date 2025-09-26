@@ -1,7 +1,7 @@
 from configparser import ConfigParser
 from os.path import isfile
 
-class DictMatch(object):
+class DictMatch:
 
     def __init__(self, config=None, mapped_options={}, mapped_defaults={}):
         self.config = config
@@ -22,7 +22,7 @@ class DictMatch(object):
             # to do our little translation-and-map thing and if that
             # comes out as empty, then we assume keys are already
             # translated
-            if type(self.config) is dict:
+            if isinstance(self.config, dict):
                 configuration = self.key_matcher(self.config, return_empty=True)
                 if not configuration:
                     configuration = self.defaults(self.config)

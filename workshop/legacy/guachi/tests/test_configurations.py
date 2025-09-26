@@ -274,11 +274,11 @@ class TestConfigOptions(unittest.TestCase):
 
     def test_options_dict_like_object(self):
         """Pass a dict-like object and make sure we get valid options back"""
-        mock_dict = MockDict() 
+        mock_dict = MockDict()
         opt = DictMatch(config=mock_dict, mapped_defaults=self.mapped_defaults)
         actual = opt.options()
         expected = self.mapped_defaults
-        self.assertEqual(actual, expected) 
+        self.assertEqual(actual, expected)
 
 
     def test_options_from_file_empty_options(self):

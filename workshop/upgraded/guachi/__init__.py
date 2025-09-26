@@ -1,1 +1,2 @@
-# __init__.py (레거시에서 복사)
+# Python 3.12 호환 버전 (legacy에서 변환됨)
+# ... legacy/__init__.py 내용 그대로 ...

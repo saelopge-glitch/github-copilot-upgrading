@@ -179,10 +179,7 @@ def download_setuptools(version=DEFAULT_VERSION, download_base=DEFAULT_URL,
     """
     # making sure we use the absolute path
     to_dir = os.path.abspath(to_dir)
-    try:
-        from urllib.request import urlopen
-    except ImportError:
-        from urllib2 import urlopen
+    from urllib.request import urlopen
     tgz_name = "distribute-%s.tar.gz" % version
     url = download_base + tgz_name
     saveto = os.path.join(to_dir, tgz_name)
@@ -444,13 +441,7 @@ def _extractall(self, path=".", members=None):
         self.extract(tarinfo, path)
 
     # Reverse sort directories.
-    if sys.version_info < (2, 4):
-        def sorter(dir1, dir2):
-            return cmp(dir1.name, dir2.name)
-        directories.sort(sorter)
-        directories.reverse()
-    else:
-        directories.sort(key=operator.attrgetter('name'), reverse=True)
+    directories.sort(key=operator.attrgetter('name'), reverse=True)
 
     # Set correct owner, mtime and filemode on directories.
     for tarinfo in directories:
